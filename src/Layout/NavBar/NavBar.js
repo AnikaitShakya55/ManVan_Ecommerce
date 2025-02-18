@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Navbar, Nav, Button, Container } from "react-bootstrap";
-import { NavLink, useHistory } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Store/Auth-Context";
 import CartContext from "../../Store/CartContext";
 import { FaShoppingCart, FaUser, FaBars, FaTimes } from "react-icons/fa";
@@ -12,7 +12,7 @@ import "./NavBar.Module.css";
 const NavBar = (props) => {
   const ctx = useContext(CartContext);
   const authCtx = useContext(AuthContext);
-  const history = useHistory();
+  const navigate = useNavigate();
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [expanded, setExpanded] = useState(false);
 
@@ -20,13 +20,13 @@ const NavBar = (props) => {
     if (authCtx.isLoggedIn) {
       props.cartShowHandler();
     } else {
-      history.push("/login");
+      navigate("/login", { replace: true });
     }
   };
 
   const logoutHandler = () => {
     authCtx.logout();
-    history.push("/login");
+    navigate("/login", { replace: true });
     alert(
       "Your email has been logged out successfully. Thank you for using our service"
     );
@@ -90,7 +90,7 @@ const NavBar = (props) => {
                   <Button
                     className="login-button"
                     onClick={() => {
-                      history.push("/login");
+                      navigate("/login", { replace: true });
                       setExpanded(false);
                     }}
                   >
@@ -177,7 +177,7 @@ const NavBar = (props) => {
           {!authCtx.isLoggedIn ? (
             <Button
               className="login-button"
-              onClick={() => history.push("/login")}
+              onClick={() => navigate("/login", { replace: true })}
             >
               <FaUser className="nav-icon" /> Login
             </Button>

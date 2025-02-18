@@ -1,19 +1,17 @@
 import React, { useContext, useState, useEffect } from "react";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
 import ProductArr from "./Components/Products on Screen/ProductArr";
 import CartComponent from "./Components/CartComponent/CartComponent";
-import { Route } from "react-router-dom";
 import AboutUs from "./Pages/AboutUs";
 import HomePage from "./Pages/HomePage";
 import Contact from "./Pages/Contact";
 import ProductDetails from "./Components/Products on Screen/ProductDetails";
-import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
 import Login from "./Pages/Login";
 import { AuthContext } from "./Store/Auth-Context";
 import Notification from "./UI/Notification";
-import { useSelector } from "react-redux";
 import Footer from "./Layout/Footer/Footer";
 import NavBar from "./Layout/NavBar/NavBar";
-import { useLocation } from "react-router-dom";
 import "./App.css";
 
 function App() {
@@ -22,13 +20,8 @@ function App() {
   const notification = useSelector((state) => state.ui.notification);
   const location = useLocation();
 
-  const cartShowHandler = () => {
-    setCartShow(true);
-  };
-
-  const cartCloseHandler = () => {
-    setCartShow(false);
-  };
+  const cartShowHandler = () => setCartShow(true);
+  const cartCloseHandler = () => setCartShow(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -47,45 +40,21 @@ function App() {
           />
         )}
 
-        {authCtx.isLoggedIn && (
-          <>
-            {" "}
-            {cartShow && (
-              <CartComponent cartCloseHandler={cartCloseHandler} />
-            )}{" "}
-          </>
+        {authCtx.isLoggedIn && cartShow && (
+          <CartComponent cartCloseHandler={cartCloseHandler} />
         )}
       </header>
 
       <main>
-        <Route path="/">
-          {" "}
-          <Redirect to="/home" />{" "}
-        </Route>
-        <Route path="/home" exact>
-          {" "}
-          <HomePage />{" "}
-        </Route>
-        <Route path="/products" exact>
-          <ProductArr />
-        </Route>
-        <Route path="/products/:productId" exact>
-          {" "}
-          <ProductDetails />{" "}
-        </Route>
-
-        <Route path="/about">
-          {" "}
-          <AboutUs />{" "}
-        </Route>
-        <Route path="/contact">
-          {" "}
-          <Contact />{" "}
-        </Route>
-        <Route path="/login">
-          {" "}
-          <Login />{" "}
-        </Route>
+        <Routes>
+          <Route path="/" element={<Navigate to="/home" replace />} />
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/products" element={<ProductArr />} />
+          <Route path="/products/:productId" element={<ProductDetails />} />
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
       </main>
 
       <Footer />

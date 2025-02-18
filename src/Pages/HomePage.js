@@ -1,15 +1,15 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import styles from "./HomePage.module.css";
 import { Row, Col } from "react-bootstrap";
 import BootStrapSlider from "../Layout/BootStrapSlider/BootStrapSlider";
 import { Image } from "react-bootstrap";
 
 const HomePage = () => {
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const viewMore = () => {
-    history.push("/products");
+    navigate("/products", { replace: true });
   };
 
   return (
