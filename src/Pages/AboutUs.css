@@ -1,0 +1,117 @@
+.AboutUsContainer {
+  padding: 60px 20px;
+}
+
+.mainhead {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: bold;
+  text-align: center;
+  font-size: 4rem;
+  margin-bottom: 10px;
+  margin-top: 30px;
+}
+
+.head1,
+.head2,
+.head3 {
+  font-size: 3rem;
+  font-weight: bold;
+  text-decoration: underline;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.para {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2rem;
+  text-align: justify;
+  line-height: 1.6;
+  padding: 0 15px;
+}
+
+.SectionImage,
+.img-fluid {
+  width: 100%;
+  height: auto;
+  max-height: 32rem;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.SectionImage:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 1200px) {
+  .mainhead {
+    font-size: 3.5rem;
+  }
+
+  .head1,
+  .head2,
+  .head3 {
+    font-size: 2.5rem;
+  }
+
+  .para {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .mainhead {
+    font-size: 3rem;
+  }
+
+  .head1,
+  .head2,
+  .head3 {
+    font-size: 2rem;
+  }
+
+  .para {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .mainhead {
+    font-size: 2.5rem;
+  }
+
+  .head1,
+  .head2,
+  .head3 {
+    font-size: 1.8rem;
+  }
+
+  .para {
+    font-size: 0.95rem;
+  }
+
+  .SectionImage {
+    max-height: 24rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .mainhead {
+    font-size: 2rem;
+  }
+
+  .head1,
+  .head2,
+  .head3 {
+    font-size: 1.5rem;
+  }
+
+  .para {
+    font-size: 0.9rem;
+  }
+
+  .SectionImage {
+    max-height: 20rem;
+  }
+}

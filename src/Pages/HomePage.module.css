@@ -1,0 +1,411 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+.mainContainer {
+  height: 100% !important;
+  width: 100% !important;
+  background-color: white !important;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.bootStrapSliderContainer {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+  background-color: white !important;
+}
+
+.projectGlimpseContainer {
+  width: 100vw;
+  height: auto;
+  white-space: nowrap;
+  background-color: white !important;
+  border-radius: 20px;
+}
+
+.glimpseHeading {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: bold;
+  text-align: center;
+  font-size: 2vmax;
+  margin-top: 15px;
+  background-color: white !important;
+}
+
+.glimpseSubheading {
+  text-align: center;
+  font-size: 1vmax;
+  margin-bottom: 5px;
+  /* background-color: yellow; */
+}
+.projectGlimpseScroll {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.projectGlimpseScroll {
+  height: 20rem;
+  width: auto;
+  align-items: center;
+  padding: 10px;
+  background-color: #f9f9f9;
+  box-shadow: none;
+  margin-bottom: 0;
+}
+
+.projectGlimpseImage {
+  display: inline-block;
+  width: 300px;
+  height: 30rem;
+  margin-right: 10px;
+  animation: slide 9s linear infinite;
+}
+
+.viewMoreButton {
+  margin-left: 10px;
+  background-color: #1a1a1a;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.viewMoreButton:hover {
+  background-color: #1a1a1a;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.homeContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  /* background-color: yellow; */
+  border-radius: 10px;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.homeSection {
+  width: 80%;
+  margin-bottom: 40px;
+}
+
+.homeSectionAlt {
+  background-color: #1d1d1d;
+  padding: 20px;
+}
+
+.homeHeading {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: bold;
+  text-align: center;
+  font-size: 2vmax;
+  margin-bottom: 10px;
+  margin-top: 15px;
+}
+
+.homeSubheading {
+  text-align: center;
+  font-size: 1vmax;
+  margin-bottom: 5px;
+}
+
+.homeImage {
+  opacity: 0.99;
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.offer_container {
+  padding: 0px 30px;
+  border-radius: 10px;
+  text-align: center;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column !important;
+}
+
+.offer_header {
+  /* background-color: red; */
+}
+
+.offer_heading {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: bold;
+  font-size: 2.5rem;
+  /* background-color: #d8d8d8; */
+  padding: 10px;
+  display: inline-block;
+  border-radius: 5px;
+}
+
+.offer-content {
+  font-size: 1rem;
+  color: #d8d8d8;
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+
+@media (min-width: 768px) {
+  .offer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.offer_grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.offer_card {
+  width: 50%;
+  min-height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.offer-card:hover {
+  transform: scale(1.05);
+}
+
+.offer_image {
+  width: 50%;
+  max-height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.offer_image:hover {
+  transform: scale(0.9);
+}
+
+/* Offer Info */
+.offer-info {
+  padding: 20px;
+}
+
+.offer-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.offer-info p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* Button Styling */
+.offer-btn {
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.offer-btn:hover {
+  background-color: #333;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+  .offer-heading {
+    font-size: 2rem;
+  }
+
+  .offer-info h3 {
+    font-size: 1.25rem;
+  }
+
+  .offer-info p {
+    font-size: 0.9rem;
+  }
+
+  .offer-btn {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+}
+
+/* offer container end */
+
+@keyframes changeBackgroundColor {
+  100% {
+    background-color: #cfcfcf;
+  }
+  50% {
+    background-color: #dfdfdf;
+  }
+  0% {
+    background-color: #f0f0f0d9;
+  }
+}
+
+body {
+  animation: changeBackgroundColor 6s infinite alternate;
+}
+
+/* Values section styling */
+.values-container {
+  position: relative;
+  width: 130%;
+}
+
+/* Value card styling */
+.value-section {
+  background-color: #c96b78;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: relative;
+}
+
+/* Animated border */
+.value-section::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border: 3px solid transparent;
+  border-radius: 15px;
+  animation: pulse-border 2s infinite alternate;
+}
+
+.value-section:hover {
+  transform: translateY(-5px);
+}
+
+.background-animation {
+  position: absolute;
+  top: 0;
+  border-radius: 10px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom, #400812, hsl(60, 4%, 64%));
+  opacity: 0.2;
+  z-index: -1;
+}
+
+@media (max-width: 600px) {
+  .mainContainer {
+    height: 100% !important;
+    width: 100% !important;
+  }
+
+  .bootStrapSliderContainer {
+    background-color: blue;
+    max-height: 30vh;
+  }
+
+  .projectGlimpseContainer {
+  }
+
+  .offer_container {
+    padding: 40px 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column !important;
+  }
+
+  .offer_header {
+    /* background-color: red; */
+  }
+
+  .offer_heading {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    font-size: 2vmax;
+    margin-bottom: 10px;
+    margin-top: 15px;
+  }
+
+  .offer_p {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    /* font-weight: bold; */
+    text-align: center;
+    font-size: 2vmax;
+    margin-bottom: 10px;
+    margin-top: 15px;
+  }
+
+  .offer_grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10%;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    /* background-color: red; */
+  }
+
+  .offer_card {
+    width: 100%;
+    min-height: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .offer-card:hover {
+    transform: scale(1.05);
+  }
+
+  .offer_image {
+    width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .offer_image:hover {
+    transform: scale(0.9);
+  }
+  .offer_info h3 {
+    display: none;
+  }
+
+  .offer_info p {
+    display: none;
+  }
+
+  .offer_btn {
+    display: none;
+  }
+}

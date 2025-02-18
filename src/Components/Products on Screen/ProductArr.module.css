@@ -1,0 +1,22 @@
+.Container {
+    margin-top: 100px;
+    justify-content: center;
+    align-items: center;
+}
+
+.firstimage{
+    height: 30rem;
+    width: 100%;
+}
+
+.pricetag{
+    height: 4rem;
+    margin-left: 60rem;
+    background-color: black;
+    width: 8rem;
+}
+
+/* ProductArr.module.css */
+
+
+  

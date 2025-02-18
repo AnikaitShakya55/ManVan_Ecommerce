@@ -1,0 +1,79 @@
+.auth-page {
+  /* background-image: url('https://www.realmenrealstyle.com/wp-content/uploads/2024/04/Forecasting-Mens-Fashion-Trends-2024-Beyond.jpg'); */
+  background-image: url('https://wallpapercave.com/wp/wp8064773.jpg');
+  background-image: url('https://wallpapercave.com/wp/wp8065055.jpg');
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 240px
+}
+
+.auth-form-container {
+  background-color: rgba(68, 68, 68, 0.8);
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.auth-form-container h1 {
+  margin-bottom: 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  width: 300px;
+ 
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #fff;
+  
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.actions button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.actions button.toggle {
+  margin-bottom: 10px;
+  background-color: transparent;
+  color: #fff;
+}
+
+.actions button[type='submit'] {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.actions button[type='submit']:hover {
+  background-color: #0056b3;
+}
+
+.actions button:disabled {
+  background-color: #ccc;
+  color: #888;
+  cursor: not-allowed;
+}

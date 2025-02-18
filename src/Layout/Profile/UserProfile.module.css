@@ -1,0 +1,55 @@
+.profile {
+  z-index: 3000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.profileIcon {
+  margin-right: 30px;
+}
+
+.profileIconImage {
+  height: 3vmax;
+}
+.profileBox {
+  position: absolute;
+  top: 35px; /* Adjust as needed */
+  right: 45px; /* Adjust as needed */
+  width: 250px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profileBox h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333; /* Adjust the color as needed */
+}
+
+.profilePic {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%; /* Make the image circular */
+  margin-bottom: 20px;
+}
+
+/* Logout button styles */
+.logoutButton {
+  background-color: #ff0000; /* Red */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.logoutButton:hover {
+  background-color: #3bcf00; /* Darker red */
+}

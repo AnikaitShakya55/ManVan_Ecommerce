@@ -1,0 +1,39 @@
+/* Notification.module.css */
+
+.notification {
+  position: fixed;
+  width: 100%;
+  top: 10%;
+  height: 7%;
+  background-color: #1a8ed1; 
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 10%;
+  align-items: center;
+  color: white;
+  border-radius: 5px; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  z-index: 500;
+}
+
+.notification h2,
+.notification p {
+  font-size: 1rem;
+  margin: 0;
+  color: white;
+  font-weight: bold;
+}
+
+.error {
+  background-color: #ff0000; /* Red color for error */
+}
+
+.success {
+  background-color: #43a047; /* Green color for success */
+}
+
+
+
+.fetched {
+  background-color: #1976d2; /* Blue color for fetching */
+}
