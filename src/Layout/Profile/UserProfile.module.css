@@ -1,55 +1,91 @@
 .profile {
-  z-index: 3000;
   display: flex;
   justify-content: center;
   align-items: center;
+  /* background-color: red; */
+  z-index: 100000;
 }
+
 .profileIcon {
-  margin-right: 30px;
+  cursor: pointer;
 }
 
 .profileIconImage {
   height: 3vmax;
-}
-.profileBox {
-  position: absolute;
-  top: 35px; /* Adjust as needed */
-  right: 45px; /* Adjust as needed */
-  width: 250px;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
 }
 
-.profileBox h3 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #333; /* Adjust the color as needed */
+.profileIconImage:hover {
+  transform: scale(1.1);
+}
+
+.profileBox {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  width: 280px;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  animation: fadeSlideIn 0.3s ease-in-out;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.profileHeader {
+  display: flex;
+  align-items: center;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 .profilePic {
-  height: 100px;
-  width: 100px;
-  border-radius: 50%; /* Make the image circular */
-  margin-bottom: 20px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  margin-right: 12px;
 }
 
-/* Logout button styles */
-.logoutButton {
-  background-color: #ff0000; /* Red */
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
+.profileInfo {
+  flex-grow: 1;
+}
+
+.profileInfo p {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.userName {
+  font-weight: bold;
   font-size: 16px;
-  border-radius: 5px;
+  color: #333;
+}
+
+.logoutButton {
+  width: 100%;
+  background-color: transparent;
+  color: #d93025;
+  font-size: 14px;
+  border: none;
+  padding: 10px;
+  margin-top: 12px;
   cursor: pointer;
+  text-align: left;
+  transition: background 0.2s;
 }
 
 .logoutButton:hover {
-  background-color: #3bcf00; /* Darker red */
+  background-color: #dddddd;
 }

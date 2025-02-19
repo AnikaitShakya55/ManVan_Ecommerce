@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import styles from "./UserProfile.module.css";
-import profilepic from "../../Assests/UserProfileIcon/icon-5359553_1280.png";
+import profilepic from "../../Assests/profile-user.png";
 import UserPic from "../../Assests/UserProfileIcon/icon-5359553_1280.png";
 import { AuthContext } from "../../Store/Auth-Context";
 import { useNavigate } from "react-router-dom/";
@@ -12,14 +12,19 @@ const UserProfile = () => {
   const userName = userEmail && userEmail.split("@")[0];
 
   const [showProfile, setShowProfile] = useState(false);
+
   const toggleProfile = () => {
     setShowProfile((prev) => !prev);
   };
 
   const logoutHandler = () => {
-    alert("Email is Logged Out");
     authCtx.logout();
     navigate("/home", { replace: true });
+  };
+
+  const loginHandler = () => {
+    navigate("/login");
+    toggleProfile();
   };
 
   return (
@@ -32,26 +37,26 @@ const UserProfile = () => {
         />
       </div>
 
-      {showProfile &&
-        (authCtx.isLoggedIn ? (
-          <div className={styles.profileBox}>
-            <h3> User Profile </h3>
+      {showProfile && (
+        <div className={styles.profileBox}>
+          <div className={styles.profileHeader}>
             <img src={UserPic} alt="Profile" className={styles.profilePic} />
-            <p>
-              <strong>Username: {userName}</strong>
-            </p>
-            <p>
-              <strong>Email:</strong> {userEmail}
-            </p>
+            <div className={styles.profileInfo}>
+              <p className={styles.userName}>{userName}</p>
+              <p>{userEmail}</p>
+            </div>
+          </div>
+          {authCtx.isLoggedIn ? (
             <button onClick={logoutHandler} className={styles.logoutButton}>
               Logout
             </button>
-          </div>
-        ) : (
-          <div className={styles.profileBox}>
-            <h3>!! Please Login</h3>
-          </div>
-        ))}
+          ) : (
+            <button onClick={loginHandler} className={styles.logoutButton}>
+              Login
+            </button>
+          )}
+        </div>
+      )}
     </div>
   );
 };
