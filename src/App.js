@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState } from "react";
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import ProductArr from "./Components/Products on Screen/ProductArr";
@@ -13,6 +13,7 @@ import Notification from "./UI/Notification";
 import Footer from "./Layout/Footer/Footer";
 import NavBar from "./Layout/NavBar/NavBar";
 import "./App.css";
+import ScrollToTop from "./utils/ScrollToTop";
 
 function App() {
   const [cartShow, setCartShow] = useState(false);
@@ -23,12 +24,9 @@ function App() {
   const cartShowHandler = () => setCartShow(true);
   const cartCloseHandler = () => setCartShow(false);
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [location]);
-
   return (
     <div>
+      <ScrollToTop />
       <header>
         <NavBar cartShowHandler={cartShowHandler} />
 
