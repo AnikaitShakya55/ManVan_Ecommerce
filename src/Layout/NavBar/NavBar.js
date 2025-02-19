@@ -6,7 +6,7 @@ import { AuthContext } from "../../Store/Auth-Context";
 import CartContext from "../../Store/CartContext";
 import { FaShoppingCart, FaUser, FaBars, FaTimes } from "react-icons/fa";
 import UserProfile from "../Profile/UserProfile";
-import logo from "../../Assests/logo.png";
+import logo from "../../Assests/unnamed.png";
 import "./NavBar.Module.css";
 
 const NavBar = (props) => {
