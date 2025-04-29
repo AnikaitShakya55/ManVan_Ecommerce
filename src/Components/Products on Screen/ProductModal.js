@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import CartContext from "../../Store/CartContext";
 import { AuthContext } from "../../Store/Auth-Context";
 import { useDispatch } from "react-redux";
-import { showNotification } from "../../Store/store";
+import { showSnackbar } from "../../redux/snackbarSlice";
 
 const ProductModule = ({ id, title, price, imageUrl, description }) => {
   const ctx = useContext(CartContext);
@@ -18,10 +18,9 @@ const ProductModule = ({ id, title, price, imageUrl, description }) => {
       ctx.addItem({ id, title, price, imageUrl });
     } else {
       dispatch(
-        showNotification({
-          status: "error",
-          title: "Authentication Required",
+        showSnackbar({
           message: "Please log in to add items to the cart.",
+          severity: "warning",
         })
       );
     }

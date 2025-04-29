@@ -7,7 +7,7 @@ import { Card, Container, Row, Col } from "react-bootstrap";
 import { BiCart } from "react-icons/bi";
 import CartContext from "../../Store/CartContext";
 import { useDispatch } from "react-redux";
-import { showNotification } from "../../Store/store";
+import { showSnackbar } from "../../redux/snackbarSlice";
 
 const CartComponent = (props) => {
   const dispatch = useDispatch();
@@ -21,10 +21,9 @@ const CartComponent = (props) => {
   const handleRemoveItem = (id) => {
     ctx.removeItem(id);
     dispatch(
-      showNotification({
-        status: "error",
-        title: "Item Removed from Cart",
-        message: "The item has been successfully removed from your cart.",
+      showSnackbar({
+        message: "Item Removed from Cart",
+        severity: "warning",
       })
     );
   };

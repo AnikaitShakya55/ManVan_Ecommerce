@@ -1,9 +1,13 @@
 import React, { useState, useRef, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../Store/Auth-Context";
+import { useDispatch } from "react-redux";
+import { showSnackbar } from "../redux/snackbarSlice";
+
 import "./Login.css";
 
 const AuthForm = () => {
+  const dispatch = useDispatch();
   const ctx = useContext(AuthContext);
   const navigate = useNavigate();
   const [isLogin, setIsLogin] = useState(true);
@@ -53,7 +57,13 @@ const AuthForm = () => {
       })
       .then((data) => {
         ctx.login(data.idToken, data.email);
-        console.log(data);
+
+        dispatch(
+          showSnackbar({
+            message: "Successfully Login !!",
+            severity: "success",
+          })
+        );
 
         emailInputRef.current.value = "";
         passwordInputRef.current.value = "";
@@ -61,7 +71,13 @@ const AuthForm = () => {
         navigate("/products", { replace: true });
       })
       .catch((err) => {
-        alert(err);
+        dispatch(
+          showSnackbar({
+            message: "Please Enter Correct Id and Password !!",
+            severity: "error",
+          })
+        );
+        console.log(err);
       });
   };
 

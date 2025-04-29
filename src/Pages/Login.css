@@ -1,39 +1,40 @@
 .auth-page {
   background-image: url("https://wallpapercave.com/wp/wp8064773.jpg");
   background-size: cover;
-  height: 100vh;
+  background-position: center;
+  min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: right;
+  justify-content: center; /* Centered on all screens */
   padding: 20px;
 }
 
 .auth-form-container {
-  background-color: rgba(120, 120, 120, 0.608);
-  margin-right: 5vw;
-  padding: 30px;
+  background-color: rgba(120, 120, 120, 0.561);
+  padding: 25px;
   border-radius: 10px;
   width: 100%;
-  max-width: 400px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  max-width: 350px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .auth-form-container h1 {
   margin-bottom: 20px;
   color: #fff;
   text-align: center;
+  font-size: 1.6rem;
 }
 
 .form-group {
-  margin-bottom: 20px;
-  margin-right: 20vw;
+  margin-bottom: 15px;
   width: 100%;
 }
 
 .form-group label {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 6px;
   color: #fff;
+  font-size: 0.95rem;
 }
 
 .form-group input {
@@ -41,6 +42,7 @@
   padding: 10px;
   border-radius: 5px;
   border: none;
+  font-size: 0.95rem;
 }
 
 .actions {
@@ -54,14 +56,16 @@
   padding: 10px;
   border-radius: 5px;
   border: none;
+  font-size: 0.95rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin-bottom: 10px;
 }
 
 .actions button.toggle {
-  margin-bottom: 10px;
   background-color: transparent;
   color: #fff;
+  font-size: 0.9rem;
 }
 
 .actions button[type="submit"] {
@@ -79,20 +83,30 @@
   cursor: not-allowed;
 }
 
-/* Responsive Design */
+/* Responsive Adjustments */
 @media (max-width: 768px) {
-  .auth-page {
-    justify-content: center;
-    padding: 10px;
+  .auth-form-container {
+    max-width: 90%;
+    padding: 20px;
   }
 
-  .auth-form-container {
-    width: 90%;
+  .auth-form-container h1 {
+    font-size: 1.4rem;
   }
 }
 
 @media (max-width: 480px) {
   .auth-form-container {
-    padding: 20px;
+    padding: 15px;
+  }
+
+  .form-group input,
+  .actions button {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .auth-form-container h1 {
+    font-size: 1.2rem;
   }
 }

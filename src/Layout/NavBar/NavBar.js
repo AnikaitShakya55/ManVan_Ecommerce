@@ -7,9 +7,13 @@ import CartContext from "../../Store/CartContext";
 import { FaShoppingCart, FaUser, FaBars, FaTimes } from "react-icons/fa";
 import UserProfile from "../Profile/UserProfile";
 import logo from "../../Assests/unnamed.png";
+import { useDispatch } from "react-redux";
+import { showSnackbar } from "../../redux/snackbarSlice";
+
 import "./NavBar.Module.css";
 
 const NavBar = (props) => {
+  const dispatch = useDispatch();
   const ctx = useContext(CartContext);
   const authCtx = useContext(AuthContext);
   const navigate = useNavigate();
@@ -27,8 +31,11 @@ const NavBar = (props) => {
   const logoutHandler = () => {
     authCtx.logout();
     navigate("/login", { replace: true });
-    alert(
-      "Your email has been logged out successfully. Thank you for using our service"
+    dispatch(
+      showSnackbar({
+        message: "Your email has been logged out successfully.",
+        severity: "success",
+      })
     );
   };
 

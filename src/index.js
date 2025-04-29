@@ -5,7 +5,8 @@ import { Provider } from "react-redux";
 import App from "./App";
 import AuthContextProvider from "./Store/Auth-Context";
 import CartProvider from "./Store/CartProvider";
-import store from "./Store/store";
+import store from "./redux/store";
+import SnackbarComponent from "./Components/SnackBarComponent/SnackBarComponent";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -15,6 +16,7 @@ root.render(
         <Provider store={store}>
           <CartProvider>
             <App />
+            <SnackbarComponent />
           </CartProvider>
         </Provider>
       </AuthContextProvider>
